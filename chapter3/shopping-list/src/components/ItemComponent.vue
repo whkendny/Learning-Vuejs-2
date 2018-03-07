@@ -1,3 +1,4 @@
+<!--渲染后的购物列表-->
 <template>
   <li :class="{ 'removed': item.checked }">
     <div class="checkbox">

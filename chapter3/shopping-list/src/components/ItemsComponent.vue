@@ -1,3 +1,4 @@
+<!--渲染并操作列表 -->
 <template>
   <div>
     <item-component v-for="item in items" :item="item"></item-component>

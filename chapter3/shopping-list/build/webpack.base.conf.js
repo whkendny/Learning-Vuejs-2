@@ -19,9 +19,10 @@ module.exports = {
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
     filename: '[name].js'
   },
+  //resolve 用来配置应用层的模块（要被打包的模块）解析
   resolve: {
-    extensions: ['', '.js', '.vue'],
-    fallback: [path.join(__dirname, '../node_modules')],
+    extensions: ['', '.js', '.vue'], //在导入语句没带文件后缀时，Webpack 会自动带上后缀后去尝试访问文件是否存在
+    fallback: [path.join(__dirname, '../node_modules')], //指定webpack依赖检查失败后, 再次指定检查入口
     alias: {
       'vue$': 'vue/dist/vue',
       'src': path.resolve(__dirname, '../src'),
@@ -29,8 +30,9 @@ module.exports = {
       'components': path.resolve(__dirname, '../src/components')
     }
   },
+  //resolveLoader 用来配置loader模块的解析
   resolveLoader: {
-    fallback: [path.join(__dirname, '../node_modules')]
+    fallback: [path.join(__dirname, '../node_modules')] //指定webpack依赖检查失败后, 再次指定检查入口
   },
   module: {
     preLoaders: [
